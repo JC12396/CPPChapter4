@@ -2,14 +2,19 @@
 #include <string>
 using namespace std;
 
+double function( double temp)
+{
+	double celcius;
+	celcius = (temp - 32) * .5556;
+	return celcius;
+}
+
 int main()
 {
 	int time1F;
 	int time2F;
 	int time3F;
-	int time1C;
-	int time2C;
-	int time3C;
+	double celcius;
 
 	cout << "At 8:00AM what was the degrees in fahrenheit?";
 	cin >> time1F;
@@ -18,12 +23,15 @@ int main()
 	cout << "At 5:00PM what was the degrees in fahrenheit?";
 	cin >> time3F;
 
-	time1C = (time1F - 32) * .5556;
-	time2C = (time2F - 32) * .5556;
-	time3C = (time3F - 32) * .5556;
-
-	cout << "The temperature at 8:00AM in Celcius was " << time1C << endl;
+	celcius = function(time1F);
+	cout << "The temperature at 8:00AM in Celcius was " << celcius << endl;
+	celcius = function(time2F);
+	cout << "The temperature at 12:00PM in Celcius was " << celcius << endl;
+	celcius = function(time3F);
+	cout << "The temperature at 5:00PM in Celcius was " << celcius << endl;
 
 	system("pause");
 	return 0;
 }
+
+
